@@ -12,8 +12,7 @@ import java.util.Iterator;
 
 public class Main
 {
-    static class FastReader
-    {
+    static class FastReader {
         BufferedReader br;
         StringTokenizer st;
 
