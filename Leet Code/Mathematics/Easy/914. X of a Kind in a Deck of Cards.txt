@@ -1,0 +1,20 @@
+//914. X of a Kind in a Deck of Cards
+
+
+class Solution {
+
+    int gcd(int a,int b){ return b==0?a:gcd(b,a%b);}
+
+    public boolean hasGroupsSizeX(int[] deck) {
+        int prevgcd=0;
+	Map<Integer,Integer> map = new HashMap<>();
+	for(int element:deck) map.put(element,map.getOrDefault(element,0)+1);
+	for(int element:map.values()) prevgcd = gcd(prevgcd,element);
+	return prevgcd>=2;
+
+
+
+
+
+    }
+}
