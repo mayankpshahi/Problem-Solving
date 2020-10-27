@@ -1,4 +1,4 @@
-1128. Number of Equivalent Domino Pairs
+//1128. Number of Equivalent Domino Pairs
 
 //O(n) 3ms
 
