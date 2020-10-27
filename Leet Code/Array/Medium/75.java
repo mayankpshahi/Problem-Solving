@@ -40,24 +40,24 @@ class Solution {
 class Solution {
     public void sortColors(int[] nums) {
         if(nums != null && nums.length > 0){
-            int last = nums.length-1;
-            int first = 0;
-            moveElementToLast(nums,first,last,2); // first move 2s to last
-            while(last >= 0 && nums[last] == 2)  // get the last 2 position
-                last--;
-            first = 0;
-            moveElementToLast(nums,first,last,1); // move 1s to before the last 2's position
+            int end = nums.length-1;
+            int start = 0;
+            moveToLast(nums,start,end,2);
+            while(end >= 0 && nums[end] == 2)
+                end--;
+            start = 0;
+            moveToLast(nums,start,end,1);
         }
     }
-    private void moveElementToLast(int[] nums, int first, int last, int num){
+    static void moveToLast(int[] nums, int first, int last, int num){
         while(first <= last){
             if(nums[first] == num){
                 if(nums[last] == num)
                     last--;
                 else{
-                    int temp = nums[last];
+                    int t = nums[last];
                     nums[last] = nums[first];
-                    nums[first] = temp;
+                    nums[first] = t;
                     first++;
                     last--;
                 }
