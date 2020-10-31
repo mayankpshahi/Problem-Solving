@@ -54,25 +54,18 @@ class Solution {
 
 class Solution {
     public int[] sortArrayByParity(int[] A) {
-        int l = 0, r = A.length - 1;
-        while (l < r) {
-            if ((A[l] & 1) == 0) {
-                l++;
-            } else {
-
-                while (l < r && ((A[r] & 1) == 1)) {
-                    r--;
-                }
-
-                if (l < r) {
-                    int tmp = A[r];
-                    A[r] = A[l];
-                    A[l] = tmp;
-                    l++;
-                    r--;
-                }
+        int i = 0, j = A.length - 1;
+        while (i < j) {
+            if (A[i] % 2 > A[j] % 2) {
+                int tmp = A[i];
+                A[i] = A[j];
+                A[j] = tmp;
             }
+
+            if (A[i] % 2 == 0) i++;
+            if (A[j] % 2 == 1) j--;
         }
+
         return A;
     }
 }
