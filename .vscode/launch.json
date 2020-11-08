@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MaxMin_Array_1<Problem-Solving_9a3cf3da>",
+            "request": "launch",
+            "mainClass": "Geeks.Easy.MaxMin_Array_1",
+            "projectName": "Problem-Solving_9a3cf3da"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MaxMin_Array_2<Problem-Solving_9a3cf3da>",
+            "request": "launch",
+            "mainClass": "Geeks.Easy.MaxMin_Array_2",
+            "projectName": "Problem-Solving_9a3cf3da"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Sorted_Array<Problem-Solving_9a3cf3da>",
+            "request": "launch",
+            "mainClass": "Geeks.Easy.Sorted_Array",
+            "projectName": "Problem-Solving_9a3cf3da"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GFG<Problem-Solving_9a3cf3da>",
+            "request": "launch",
+            "mainClass": "Geeks.Hard.GFG",
+            "projectName": "Problem-Solving_9a3cf3da"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Delete_Node<Problem-Solving_9a3cf3da>",
+            "request": "launch",
+            "mainClass": "Geeks.Medium.Delete_Node",
+            "projectName": "Problem-Solving_9a3cf3da"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Rearrange<Problem-Solving_9a3cf3da>",
+            "request": "launch",
+            "mainClass": "Geeks.Medium.Rearrange",
+            "projectName": "Problem-Solving_9a3cf3da"
+        }
+    ]
+}
