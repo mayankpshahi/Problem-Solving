@@ -55,6 +55,8 @@ for i <= 4 no substrings can have more than 3 distinct characters, hence Xi=0.
 
 */
 
+//This Solution gave Tle
+
 import java.io.*;
 import java.util.*;
 
@@ -117,3 +119,78 @@ public class Solution {
         }
     }
 }
+
+
+
+
+//Editorial Solution cpp
+
+
+#include<bits/stdc++.h>
+#define endl '\n'
+#define mod 1000000007
+using namespace std;
+#define MAX 100005
+typedef long long int ll;
+
+vector<ll> solve(int n, string s) 
+{
+    s="*"+s;
+    vector<ll> v;
+    for(int i=26;i>=1;i--){
+        map<char,ll> mp;
+        int start=1;
+        int end=0;
+        ll cnt=0;
+        while(start<=n) {
+            while(end+1<=n) {
+                if(mp.size()>=i) break;
+                mp[s[end+1]]++;
+                end++;
+            }
+            if(mp.size()<i) break;
+            cnt+=ll(n-end+1);
+            char ch=s[start];
+            if(mp[ch]==1) mp.erase(ch);
+            else mp[ch]--;
+            start++;
+        }
+        v.push_back(cnt);
+    }
+    reverse(v.begin(),v.end());
+    return v;
+}
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    #ifndef ONLINE_JUDGE
+        freopen("input3.txt", "r", stdin);
+        freopen("output3.txt", "w", stdout);
+    #endif
+    int t; cin>>t;
+    while(t--)
+    {
+        int n; cin>>n;
+        string s;
+        for(int i=0;i<n;i++){
+             char ch; cin>>ch;
+             s.push_back(ch);
+        }
+         vector<ll> ans=solve(n,s);
+        for(auto i: ans) cout<<i<<" ";
+        cout<<endl;
+    }
+   
+}
+
+
+/*
+Firslty Check How we can calculate number of substrings with distinct characters i .
+To calculate this fix any index and try to calculate number of substrings starting with this jth letter.
+1st Approach to find right index can be binary search as we can apply binary search to find minimum right index such that distinct characters between j to that right index is 'i'.
+To find that distinct characters in l to r we can use segment tree or dynammic progrmming , but those solutions will be overkill for this problem.
+So most efficient solution for this problem is to use two pointer technique and using STL map to maintain the frequency of each character.
+we can maintain two pointer such that in between those two pointer always 'i' distinct characters are there and thus from this we can calculate all substring for any particular 'i''.
+*/
