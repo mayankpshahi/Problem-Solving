@@ -1,5 +1,7 @@
 //746. Min Cost Climbing Stairs
 
+
+//Linear Dp
 class Solution {
     public int minCostClimbingStairs(int[] cost) {
         //mincost[i] = cost[i] + Math.min(cost[i-1],cost[i-2])
